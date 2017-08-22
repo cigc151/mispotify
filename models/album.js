@@ -1,7 +1,10 @@
 'use strict'
+/*IMPORTAMOS EL MODULO DE MONGOOSE*/
  var mongoose = require('mongoose');
+ /*CREAMOS SCHEMA*/
  var Schema = mongoose.Schema;
 
+/*DEFINIMOS ATRIBUTOS DEL ESQUEMA ALBUM*/
  var AlbumSchema = Schema({
  	title:String,
  	description:String,
@@ -11,5 +14,5 @@
  });
 
  //para utilizar este objeto fuera del fichero usamos la siguiente linea de codigo
-
- module.exports = mongoose.model('Artist',ArtistSchema)
+ /*EXPORTAMOS EL MODELO "Album" Y EL SCHEMA "AlbumSchema"*/
+ module.exports = mongoose.model('Album',AlbumSchema)
