@@ -9,7 +9,7 @@
 	exports.ensureAuth =function(req,res,next){
 
 		if(!req.headers.authorization){
-			return res.status(403).send({message: 'La peticion no tiene la cabecera de autenctcacion'})
+			return res.status(403).send({message: 'La peticion no tiene la cabecera de autenticacion'})
 		}
 		var token = req.headers.authorization.replace(/['"]+/g,'');
 
@@ -21,7 +21,7 @@
 
 		}
 		catch(ex){
-			console.log(ex)
+			//console.log(ex)
 			return res.status(403).send({message: 'Token no valido'})
 
 		}
