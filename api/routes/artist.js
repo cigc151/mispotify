@@ -17,5 +17,12 @@
 	api.post('/artist',md_auth.ensureAuth,ArtistController.saveArtist);
 	/*RUTA PARA OBTERNER PAGINACION DE ARTISTAS*/
 	api.get('/artists/:page?',md_auth.ensureAuth,ArtistController.getArtists);
+	/*RUTA PARA ACTUALIZAR ARTISTA*/
+	api.put('/artists/:id',md_auth.ensureAuth,ArtistController.updateArtist);
+	/*RUTA PARA ACTUALIZAR ARTISTA*/
+	api.delete('/artists/:id',md_auth.ensureAuth,ArtistController.deleteArtist);
+
+
+
 	module.exports=api;
 })();

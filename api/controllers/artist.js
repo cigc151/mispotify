@@ -88,11 +88,53 @@
 			}
 		});
 	}
+function updateArtist(req,res){
+	var  artistId= req.params.id;
+	var update = req.body;
+	Artist.findByIdAndUpdate(artistId, update,(err,artistUpdated)=>{
+		if(err){
+			res.status(500).send({message:'Error al guardar el artista'})
+		}
+		else{
+			if(!artistUpdated){
+				res.status(404).send({message:'El artista no ha sido actualizado'});
 
+			}
+			else{
+					res.status(200).send({artist:artistUpdated});
+			}
+
+		}
+	});
+}
+	
+	function deleteArtist(req,res){
+		var artistID=req.params.id;
+
+		Artist.findByIdAndRemove(err,(err,artistRemoved)=>{
+			if(err){
+				res.status(500).send({message:'Error al intentar borrar el artista'});
+			}
+			else{
+				if(!artistRemoved){
+					res.status(404).send({message:'El artista no ha sido eliminado.'});
+
+				}
+				else{
+					res.status({artistRemoved});
+				}
+
+			}
+
+		});
+
+	}
 	module.exports={
 		getArtist,
 		saveArtist,
-		getArtists
+		getArtists,
+		updateArtist,
+		deleteArtist
 	};
 
 })();
