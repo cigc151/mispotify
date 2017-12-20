@@ -10,7 +10,7 @@
 		var user_routes = require('./routes/user');
 		var artist_routes = require('./routes/artist')
 		var album_routes = require('./routes/album');
-		var song_routes = require('./route/song');
+		var song_routes = require('./routes/song');
 
 		//configuramos bodyParser
 		app.use(bodyParser.urlencoded({extended:false}));
